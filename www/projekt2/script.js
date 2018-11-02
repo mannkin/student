@@ -1,3 +1,4 @@
-$.getJSON("test.json", function(json) {
+var studentObj = $.getJSON("test.json", function(json) {
 	console.log(json);
 });
+

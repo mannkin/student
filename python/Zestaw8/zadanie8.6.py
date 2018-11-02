@@ -1,20 +1,15 @@
 import math
 
-dict = {}
-
-def P(i, j, dict):
+def P(i, j):
 
 	if i == 0 and j == 0:
-		x = 0.5
+		return 0.5
 	if i > 0 and j == 0:
-		x =  0.0
+		return 0.0
 	if i == 0 and j > 0:
-		x = 1.0
+		return 1.0
 	else:
-        	x = 0.5 * (P(i-1, j, dict) + P(i, j-1, dict))
+        	return 0.5 * (P(i-1, j) + P(i, j-1))
 
-	dict.update({'{0:2d}, {1:2d}'.format(i, j):x})
+print(P(1, 1))
 
-P(1, 1, dict)
-
-print(dict)

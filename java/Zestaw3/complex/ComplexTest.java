@@ -2,13 +2,13 @@ import org.junit.Assert;
 
 public class ComplexTest {
 
-	void testToString {
+	void testToString() {
 		Complex a = new Complex("-1.2+3.4i");
 		String result = a.toString();
 		Assert.assertEquals("-1.2+3.4i", result);
 	}
 	
-	void testValueOf {
+	void testValueOf() {
 		Complex a = new Complex("-1.2+3.4i");
 		Complex b = Complex.valueOf("-1.2+3.4i");
 		Assert.assertThat(a, samePropertyAs(b));	
@@ -45,4 +45,5 @@ public class ComplexTest {
 		String result = a.toString();
 		Assert.assertEquals("-1-1i", result);
 	}
+
 }

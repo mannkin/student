@@ -1,4 +1,6 @@
-@FunctionalInterface
+package start;
+
+FunctionalInterface
 public interface Computation<T> {
     T compute(T);
 }
@@ -22,6 +24,7 @@ public class Multiplier implements Computation<Double> {
 public class Compute {
 	public static void main(String[] args) {
 		Multiplier mul = new Multiplier(2);
+		double[20] array;
 
 		plot(3, 10, mul);
 		plot(3, 10, new Computation<Double>() {
@@ -34,6 +37,9 @@ public class Compute {
 		plot(3, 10, comp);
 		plot(3, 10, Multiplier::compute);
 		plot(3, 10, Multiplier::computeStatic);
+
+		apply(array, mul);
+		System.out.println(array);
 	}
 
 	public static void plot(double xmin, double xmax, Computation<Double> f) {

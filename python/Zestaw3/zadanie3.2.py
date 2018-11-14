@@ -6,13 +6,14 @@
  
 L = [3, 5, 4] ; L = L.sort()
 
-# x, y = 1, 2, 3
+x, y = 1, 2, 3
 
-# X = 1, 2, 3 ; X[1] = 4
+X = 1, 2, 3 ; X[1] = 4
 
-# X = [1, 2, 3] ; X[3] = 4
+X = [1, 2, 3] ; X[3] = 4
 
-# X = "abc" ; X.append("d")
+X = "abc" ; X.append("d")
 
-# map(pow(1, 2[3]), range(8))
+map(pow, range(8))
+
 

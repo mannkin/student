@@ -1,6 +1,6 @@
 # kod nie jest poprawny skladniowo, Syntax error
 
-f (x > y):
+f (x > y): # invalid syntax
     result = x;
 else:
     result = y;

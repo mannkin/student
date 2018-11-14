@@ -15,6 +15,9 @@ public class Compute {
 			}
 		});
 		Computation<Double> comp = x->x*y;
+		
+		int z = (int x, int y) -> x+y;
+
 		plot(3, 10, comp);
 		plot(3, 10, mul::compute);
 		plot(3, 10, Multiplier::computeStatic);

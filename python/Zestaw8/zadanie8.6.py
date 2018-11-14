@@ -11,5 +11,5 @@ def P(i, j):
 	else:
         	return 0.5 * (P(i-1, j) + P(i, j-1))
 
-print(P(1, 1))
+print(P(2, 5))
 

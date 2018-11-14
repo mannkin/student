@@ -17,7 +17,7 @@ def zad5():
     string += top
     string += bot
 
-    return string;
+    return string
 
 def zad6():
     x = input()
@@ -40,7 +40,7 @@ def zad6():
        	string += X
 	string += '\n'
 
-    return 	string;
+    return 	string
 
 print(zad5())
 print(zad6())

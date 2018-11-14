@@ -1,8 +1,8 @@
 public class Multiplier implements Computation<Double> {
 	private static double a;
 	
-	public Multiplier(double a) {
-		this.a = a;
+	public Multiplier(double x) {
+		a = x;
 	}
 
     @Override

@@ -1,24 +1,11 @@
-ROMAN = [
-    (1000, "M"),
-    ( 900, "CM"),
-    ( 500, "D"),
-    ( 400, "CD"),
-    ( 100, "C"),
-    (  90, "XC"),
-    (  50, "L"),
-    (  40, "XL"),
-    (  10, "X"),
-    (   9, "IX"),
-    (   5, "V"),
-    (   4, "IV"),
-    (   1, "I"),
-]
+def roman_to_int(s):
+    ROMAN = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    int_val = 0
+    for i in range(len(s)):
+        if i > 0 and ROMAN[s[i]] > ROMAN[s[i - 1]]:
+            int_val += ROMAN[s[i]] - 2 * ROMAN[s[i - 1]]
+        else:
+            int_val += ROMAN[s[i]]
+    return int_val
 
-def int_to_roman(number):
-    result = ""
-    for (arabic, roman) in ROMAN:
-        (factor, number) = divmod(number, arabic)
-        result += roman * factor
-    return result
-
-print(int_to_roman(input()))
+print(roman_to_int(raw_input()))

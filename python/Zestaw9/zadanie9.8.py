@@ -67,30 +67,22 @@ class BinarySearchTree:
 
 
 def  bst_max(top):
-	
+
     if top:
-        if top.right:
-                if top.right.data > top.data:
-		    bst_max(top.right)
-                else:
-                    return top.data
-	else:
-		return top.data
+        while top.right is not None:
+            top = top.right
+        return top.data
     else:
-        raise ValueError('bst empty')
-    
+        return ValueError('BST empty')
+        
 def bst_min(top):
 
     if top:
-        if top.left:
-                if top.left.data < top.data:
-		    bst_min(top.left)
-                else:
-                    return top.data
-	else:
-		return top.data
-    else: 
-        raise ValueError('bst empty')
+        while top.left is not None:
+            top = top.left
+        return top.data
+    else:
+        return ValueError('BST empty')
 
 bst = BinarySearchTree()
 bst.insert(8)
@@ -99,7 +91,6 @@ bst.insert(421)
 bst.insert(2)
 bst.insert(13)
 
-print(bst.count)
 print(bst.root)
 print(bst_min(bst.root))
 print(bst_max(bst.root))

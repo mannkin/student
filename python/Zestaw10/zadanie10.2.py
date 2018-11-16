@@ -18,10 +18,11 @@ stack1 = Stack()
 
 stack2 = Stack()
 
-stack3 = Stack()
-
 stack2.push(3)
 
+stack3 = Stack()
+
+stack3.push(7)
 
 class TestStack(unittest.TestCase):
 
@@ -33,7 +34,7 @@ class TestStack(unittest.TestCase):
 
     def test_push(self):
         with self.assertRaises(ValueError) : stack.push(3)
-        with self.assertTrue(stack3.items[stack3.n-1] == 7) : stack3.push(7)
+        self.assertTrue(stack3.items[0] == 7)
 
     def test_pop(self):
         with self.assertRaises(ValueError) : stack1.pop()

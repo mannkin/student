@@ -1,20 +1,13 @@
-def factorial(n):
-    
-    x = 1
+def factorial(x):
+    result = 1
+    for i in xrange(2, x + 1):
+        result *= i
+    return result
 
-    if n == 0:
-        print(1)
-    if n == 1:
-        print(1)
-    else:
-        for i in range(2, n+1):
-            x *= i
-        print(x)
-
-factorial(4)
-factorial(5)
-factorial(6)
-factorial(7)
-factorial(8)
-factorial(9)
-factorial(10)
+print(factorial(4))
+print(factorial(5))
+print(factorial(6))
+print(factorial(7))
+print(factorial(8))
+print(factorial(90))
+print(factorial(10))

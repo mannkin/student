@@ -1,12 +1,12 @@
 import random
 
-class Queue:
+class RandomQueue:
 
     def __init__(self, size=5):
-        self.n = size + 1         # faktyczny rozmiar tablicy
+        self.n = size + 1        
         self.items = self.n * [None]
-        self.head = 0           # pierwszy do pobrania 
-        self.tail = 0           # pierwsze wolne
+        self.head = 0           
+        self.tail = 0          
 
     def is_empty(self):
         return self.head == self.tail
@@ -23,10 +23,25 @@ class Queue:
 
     def remove(self):
         if not self.is_empty():
-            data = self.items[self.head]
-            self.items[self.head] = None      # usuwam referencję
-            self.head = (self.head + 1) % self.n
+            rnd = random.randrange(self.head, self.tail, 1)
+            data = self.items[rnd]
+            self.items[rnd] = None
+            self.items = filter(None, self.items)
+            self.tail = len(self.items)
             return data
         else:
             raise ValueError('Queue is empty')
-~                                                    
+
+rndq = RandomQueue()          
+
+rndq.insert(1)
+rndq.insert(2)
+rndq.insert(3)
+rndq.insert(4)
+rndq.insert(5)
+
+print(rndq.remove())
+print(rndq.remove())
+print(rndq.remove())
+print(rndq.remove())
+print(rndq.remove())

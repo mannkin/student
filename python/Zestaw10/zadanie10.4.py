@@ -13,6 +13,8 @@ queue2.put(4)
 
 queue3 = Queue()
 
+queue3.put(3)
+
 queue4 = Queue()
 
 queue4.put(2)
@@ -27,7 +29,7 @@ class TestQueue(unittest.TestCase):
 
     def test_put(self):
         with self.assertRaises(ValueError) : queue2.put(5)
-        with self.assertTrue(queue3.items[0] == 3) : queue3.put(3)
+        self.assertTrue(queue3.items[0] == 3) 
 
     def test_get(self):
         with self.assertRaises(ValueError): queue1.get()

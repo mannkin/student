@@ -7,11 +7,6 @@ def createSquare(n):
     for x in xrange(len(L)):
 	    L[x]=[None]*n
 
-    # for i in range(0, n):
-    #     L[0][i] = i
-    # for j in range(1, n):
-    #     L[j][0] = j
-        
     return L
 
 def search(L, n):
@@ -22,8 +17,8 @@ def search(L, n):
 
 def fill(L, n, z):
     x = 0
-    for i in range(1, n):
-                for j in range(1, n):
+    for i in range(0, n):
+                for j in range(0, n):
                     L[i][j] = z[x]
                     if check(L, i, j):
                         return
@@ -35,11 +30,17 @@ def fill(L, n, z):
 
 def check(L, i, j):
     for x in range(0, j):
-        if L[i][x] == L[i][j]:
-            return True
+        return L[i][x] == L[i][j]
     for y in range(0, i):
-        if L[y][j] == L[i][j]:
-            return True
+        return L[y][j] == L[i][j]
+    if i < 2 OR j < 2:
+        return L[i][j] == L[0][0] OR L[i][j] == L[0][1] OR L[i][j] == L[1][0] OR L[i][j] == L[1][1]
+    elif i < 2 OR j >= 2:
+        return L[i][j] == L[0][2] OR L[i][j] == L[0][3] OR L[i][j] == L[1][2] OR L[i][j] == L[1][3]
+    elif i >= 2 OR j < 2:
+        return L[i][j] == L[2][0] OR L[i][j] == L[3][0] OR L[i][j] == L[2][1] OR L[i][j] == L[3][1]
+    elif i >= 2 OR j >= 2:
+        return L[i][j] == L[2][2] OR L[i][j] == L[2][3] OR L[i][j] == L[3][2] OR L[i][j] == L[3][3]
 
 def printSquare(L):
     for i in L:

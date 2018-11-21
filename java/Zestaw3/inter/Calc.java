@@ -8,4 +8,15 @@ public interface Calc<T> {
     default String defaultMethod() {
         return "Operacja na ulamkach";
     }
+
+    default void print1() {
+        System.out.println("Calc");
+    }
+
+    default void print2() {
+        print1();
+    }
 }
+
+
+

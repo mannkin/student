@@ -63,5 +63,7 @@ public class Fracs implements Calc<Fracs> {
         return new Fracs(a.l * b.m, a.m * b.l);
     }
 
-
+    public void print1() {
+        System.out.println("Fracs");;
+    }
 }

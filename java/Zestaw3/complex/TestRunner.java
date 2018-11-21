@@ -15,10 +15,10 @@ public class TestRunner {
     test.testAdd();
     test.testSub();
     test.testMul();
-    //test.testDiv();
+    test.testDiv();
     test.testStaticAdd();
     test.testStaticSub();
     test.testStaticMul();
-    //test.testStaticDiv();
+    test.testStaticDiv();
 	}
 }

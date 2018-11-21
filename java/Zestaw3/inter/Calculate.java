@@ -11,5 +11,9 @@ public class Calculate {
     System.out.println(w.toString());
 
     System.out.println(x.defaultMethod());
+
+    z.print2();
     }
+
+
 }

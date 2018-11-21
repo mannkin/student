@@ -9,11 +9,11 @@ def fill(L, n, k):
 def linear_search(L, k):
     x = random.randrange(0, k-1)
     counter = L.count(x)
-    l = []
+    pos = []
     for i in range(0, len(L)):
         if x == L[i]:
-            l.append(i)
-    return (x,l, counter)
+            pos.append(i)
+    return (x, pos, counter)
 
 fill(L, 100, 10)
 print(linear_search(L, 10))

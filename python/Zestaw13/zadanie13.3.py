@@ -20,7 +20,7 @@ def search(L, n):
     elif n == 4:
         l = set(itertools.permutations([0,0,0,1,1,2,2,3,3]))
     elif n == 5:
-        l = set(itertools.permutations([0,0,0,0,1,1,1,2,2,2,3,3,3,4,4,4))
+        l = set(itertools.permutations([0,0,0,0,1,1,1,2,2,2,3,3,3,4,4,4]))
         
     for z in l:
         fill(L, n , z)

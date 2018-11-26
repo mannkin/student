@@ -1,3 +1,5 @@
+# podejscie brute force dla malych n
+
 import numpy as np
 import random
 import itertools
@@ -50,6 +52,7 @@ def printSquare(L):
     for i in L:
         print(i)
 
+search(createSquare(3), 3)
 search(createSquare(4), 4)
 
 

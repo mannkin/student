@@ -9,7 +9,7 @@ public class MandelFractal implements ComplexDrawable {
     @Override
     public void draw(PixelWriter pw, Complex a, Complex b, int w, int h) {
 
-        final int l_iteracji = 30;
+        final int l_iteracji = 255;
 
         double minR = a.re();
         double maxR = b.re();
@@ -31,14 +31,15 @@ public class MandelFractal implements ComplexDrawable {
                 Complex z = new Complex(0,0);
                 int iteracje = 0;
                 while(iteracje < l_iteracji && z.abs() < 2) {
-                    z = z.sqr().add(c);
+                    //z = z.sqr().add(c);
+                    z.mul(z).add(c);
                     iteracje += 1;
                 }
                 if(iteracje == l_iteracji) {
                     pw.setArgb(x, y,(0xFF<<24) | 0 | 0 | 0);
                 }else {
-                    //pw.setArgb(x, y, (0xFF << 24) | iteracje*scaleRGB | (iteracje*scaleRGB*2) % 255 | (iteracje*scaleRGB*4) % 255);
-                    pw.setColor(x, y, colors[iteracje]);
+                    pw.setArgb(x, y, (0xFF << 24) | iteracje*scaleRGB | (iteracje*scaleRGB*2) % 255 | (iteracje*scaleRGB*3) % 255);
+                    //pw.setColor(x, y, colors[iteracje]);
                 }
             }
         }

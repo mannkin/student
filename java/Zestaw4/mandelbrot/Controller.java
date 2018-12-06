@@ -46,17 +46,24 @@ public class Controller {
     public void mousePressed(MouseEvent mouseEvent) {
         x1 = mouseEvent.getX();
         y1 = mouseEvent.getY();
+        x2 = x1;
+        y2 = y1;
     }
 
     public void mouseReleased(MouseEvent mouseEvent) {
         x2 = mouseEvent.getX();
         y2 = mouseEvent.getY();
-        minX = minX + x1*scaleX;
-        maxX = minX + x2*scaleX;
-        minY = maxY - y2*scaleY;
-        maxY = maxY - y1*scaleY;
-        scaleX = (maxX - minX) / w;
-        scaleY = (maxY - minY) / h;
+        double scaleX = (maxX - minX) / w;
+        double scaleY = (maxY - minY) / h;
+        double minX = this.minX + x1*scaleX;
+        double maxX = this.minX + x2*scaleX;
+        double minY = this.maxY - y2*scaleY;
+        double maxY = this.maxY - y1*scaleY;
+        this.minX = minX;
+        this.maxX = maxX;
+        this.minY = minY;
+        this.maxY = maxY;
+        clear(gc);
         mandel.draw(pw, new Complex(minX, maxY), new Complex(maxX, minY), w, h);
     }
 }

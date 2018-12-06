@@ -47,9 +47,12 @@ public class Complex implements Field<Complex> {
 	}
 
 	public Complex mul(Complex b){
-		double re = this.r;
-		this.r = (re * b.r) - (this.i * b.i);
-		this.i = (re * b.i) + (this.i * b.r);
+		double re = b.r;
+		double im = b.i;
+		double R = this.r;
+		double I = this.i;
+		this.r = (re * R) - (im * I);
+		this.i = (re * I) + (im * R);
 		return this;
 	}
 
@@ -62,14 +65,13 @@ public class Complex implements Field<Complex> {
 
 	public Complex sqr(){
 		double re = this.r;
-		double im = this.i;
-		this.r = re*re - im*im;
-		this.i = 2*re*im;
+		this.r = this.r*this.r - this.i*this.i;
+		this.i = 2*re*this.i;
 		return this;
 	}
 
 	public double abs(){
-		return Math.hypot(r,i);
+		return Math.sqrt(r*r + i*i);
 	}
 	
 	public double sqrAbs(){
@@ -95,7 +97,7 @@ public class Complex implements Field<Complex> {
 	}; 
 
 	public static Complex mul(Complex a, Complex b){
-		double rze = (a.r * b.r )- (a.i * b.i );
+		double rze = (a.r * b.r ) - (a.i * b.i );
 		double ur = (a.r * b.i) + (b.r * a.i);
 		return new Complex(rze, ur);
 	}

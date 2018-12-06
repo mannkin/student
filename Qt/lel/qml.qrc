@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>HomePageForm.ui.qml</file>
+        <file>PeriodicTicketForm.ui.qml</file>
+        <file>RegisterForm.ui.qml</file>
+        <file>PaymentForm.ui.qml</file>
+        <file>PaymentPositiveForm.ui.qml</file>
+        <file>HomePage.qml</file>
+        <file>Repertoire.qml</file>
+        <file>RepertoireForm.ui.qml</file>
+        <file>Register.qml</file>
+        <file>Payment.qml</file>
+        <file>PeriodicTicket.qml</file>
+        <file>PaymentPositive.qml</file>
+        <file>SpecificTitle.qml</file>
+        <file>SpecificTitleForm.ui.qml</file>
+        <file>Result.qml</file>
+        <file>ResultForm.ui.qml</file>
+    </qresource>
+</RCC>

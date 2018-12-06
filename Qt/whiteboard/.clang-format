@@ -1,0 +1,32 @@
+BasedOnStyle: LLVM
+
+UseTab: Always
+
+BreakConstructorInitializers: AfterColon
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+
+IndentWidth: 4
+TabWidth: 4
+ContinuationIndentWidth: 4
+AccessModifierOffset: -4
+ConstructorInitializerIndentWidth: 2
+
+ColumnLimit: 0
+
+BreakBeforeBraces: Attach
+IndentCaseLabels: false
+AlignAfterOpenBracket: AlwaysBreak
+AlignEscapedNewlines: DontAlign
+
+PointerAlignment: Left
+
+AllowShortBlocksOnASingleLine: false
+AllowShortFunctionsOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AlignOperands: false
+
+SortIncludes: true
+
+Cpp11BracedListStyle: true

@@ -1,3 +1,5 @@
+package sample.complex;
+
 import java.util.StringTokenizer;
 
 public class Complex implements Field<Complex> {
@@ -58,6 +60,14 @@ public class Complex implements Field<Complex> {
 		return this;
 	}
 
+	public Complex sqr(){
+		double re = this.r;
+		double im = this.i;
+		this.r = re*re - im*im;
+		this.i = 2*re*im;
+		return this;
+	}
+
 	public double abs(){
 		return Math.hypot(r,i);
 	}
@@ -110,7 +120,7 @@ public class Complex implements Field<Complex> {
 		return Math.atan2(a.r, a.i);
 	}       
 
-	public static double sqrtAbs(Complex a){
+	public static double sqrAbs(Complex a){
 		return (a.abs() * a.abs());
 	}
 
@@ -139,21 +149,25 @@ public class Complex implements Field<Complex> {
 		return new Complex(r, i);
 	}
 
-	void setRe(double s){
+	public void setRe(double s){
 		this.r = s;
 	}
 
-	void setIm(double s){
+	public void setIm(double s){
 		this.i = s ;
 	}
 
-	void setVal(Complex q){
+	public void setVal(Complex q){
 		this.r = q.r;
 		this.i = q.i;
 	}
 
-	void setVal(double z, double y){
+	public void setVal(double z, double y){
 		this.r = z;
 		this.i = y;
+	}
+
+	public boolean greaterThan(double x){
+		return (r*r + i*i) < (x*x);
 	}
 }

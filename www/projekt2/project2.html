@@ -9,6 +9,9 @@
 	</head>
 
 	<body>
+		<script>
+			const helper = new Helper();
+		</script>
 		<div class="menu">
 			<ul>
 				<li>
@@ -34,6 +37,13 @@
 		</div>
 		<div class="content">
 			<p>To jest strona projektu numer 2</p>
+			<form id="myForm">
+				JSONStudent: <input type="text" name="JSONStudent" value="JSONStudent"><input id="selectJSON" type="file"><br>
+			</form>
+			<button onclick="helper.addStudent()">Dodaj studenta</button><input onclick="helper.addJSON()" type="submit">
+			<p id="studentList">
+				<b>Lista studentow</b>
+			</p>
 		</div>
 		<footer>
 			<p>Strona stworzona jako projekt na zajecia Techniki WWW</p>

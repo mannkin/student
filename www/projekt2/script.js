@@ -1,7 +1,9 @@
+var studentList = [];
+var studentListJSON;
+
 class Helper {
 
 	constructor() {
-		this.studentList = [];
 	}
 
 	addStudent() {
@@ -22,30 +24,21 @@ class Helper {
 			return false;
 		}
 		var fr = new FileReader();
-		
 		fr.onload = function(e) {
-			document.getElementById("myForm").elements[0].value = e.target.result;
+			studentListJSON = e.target.result;
 		};
-
 		fr.readAsText(files.item(0));
-
-		//this.addStudent();
 	}
 
 	getStudentList(studentObjs) {
-		var studentList = [];
-		for (var x in studentObjs) {
-			studentList.push(JSON.parse(x))
-		}
-		studentList = this._sortByName(studentList);
-		return studentList;
+		var list = [];
+		var JSONStudents = JSON.parse(studentObjs);
+		list = list.concat(JSONStudents);
+		list = this._sortByName(list);
+		return list;
 	}
 
 	getStudentListForCourse(studentObjs,year,courseName) {
-		var studentList = [];
-		for (var x in studentObjs) {
-			studentList.push(JSON.parse(x));
-		}
 		var studentListForCourse = [];
 		for (var y in studentList) {
 			var coursesYear = y.courses;
@@ -67,14 +60,26 @@ class Helper {
 	getAvarageForStudentInYear(studentObj,year) {
 		var averageGrade = 0.0;
 		var numberOfGrades = 0;
-		for (var x in studentObj.courses) {
-			if(x == year) {
-				for (var y in x) {
-					for (var z in y) {
-						for (var w in z) {
-							for (var u in w) {
-								averageGrade += u;
-								numberOfGrades += 1;
+		for(var name in studentObj.courses) {
+			if(name == year) {
+				var len10 = name.length;
+				var value = studentObj.courses[name];
+				var len20 = value.length;
+				for (var name1 in value){
+					var len11 = name1.length;
+					var value1 = value[name1];     
+					var len21 = value1.length;
+					for (var name2 in value1){
+						var len12 = name2.length;
+						var value2 = value1[name2];
+						var len22 = value2.length;
+						for (var name3 in value2){
+							var len13 = name3.length;
+							var value3 = value2[name3];   
+							var len23 = value3.length;
+							for (var i=0; i<len23; i++){
+								averageGrade += value3[i];
+								numberOfGrades++;
 							}
 						}
 					}
@@ -117,15 +122,27 @@ class Helper {
 	getAverageForCourse(studentObjs,year,courseName) {
 		var averageGrade = 0.0;
 		var numberOfGrades = 0;
-		for (var x in studentObj.courses) {
-			if(x == year) {
-				for (var y in x) {
-					if(y == courseName) {
-						for (var z in y) {
-							for (var w in z) {
-								for (var u in w) {
-									averageGrade += u;
-									numberOfGrades += 1;
+		for (var name in studentObjs.courses) {
+			if(name == year) {
+				var len10 = name.length;
+				var value = studentObj.courses[name];
+				var len20 = value.length;
+				for (var name1 in value){
+					if(name1 == courseName) {
+						var len11 = name1.length;
+						var value1 = value[name1];     
+						var len21 = value1.length;
+						for (var name2 in value1){
+							var len12 = name2.length;
+							var value2 = value1[name2];
+							var len22 = value2.length;
+							for (var name3 in value2){
+								var len13 = name3.length;
+								var value3 = value2[name3];   
+								var len23 = value3.length;
+								for (var i=0; i<len23; i++){
+									averageGrade += value3[i];
+									numberOfGrades++;
 								}
 							}
 						}

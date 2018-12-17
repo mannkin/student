@@ -37,10 +37,12 @@
 		</div>
 		<div class="content">
 			<p>To jest strona projektu numer 2</p>
+			<p>Nalezy wybrac plik JSON, nastepnie nacisnac przycisk "Submit query"/"Wyslij zapytanie" oraz "Dodaj studentow". Przykladowy plik JSON:</p>
+			<a href="studentObjs.json">studentObjs.json</a>
 			<form id="myForm">
-				JSONStudent: <input type="text" name="JSONStudent" value="JSONStudent"><input id="selectJSON" type="file"><br>
+				<input id="selectJSON" type="file"><input type="text" name="JSONStudent" value="JSONStudent"><br>
+				<button onclick="helper.addStudent()">Dodaj studentow</button><input onclick="helper.addJSON()" type="submit">
 			</form>
-			<button onclick="helper.addStudent()">Dodaj studenta</button><input onclick="helper.addJSON()" type="submit">
 			<p id="studentList">
 				<b>Lista studentow</b>
 			</p>
